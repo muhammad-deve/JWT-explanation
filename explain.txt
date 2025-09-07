@@ -1,0 +1,50 @@
+******************************
+JWT Token (Step by Step Notes)
+******************************
+
+=========================================================================
+
+*** Token Types ***
+
+**Access Token**  
+→ Short-lived (**15 min – 1 hour**)  
+→ Used to access protected APIs  
+→ Must be refreshed when expired  
+
+**Refresh Token**  
+→ Long-lived (**days or weeks**)  
+→ Used only to request new Access Tokens  
+→ If expired → user must log in again  
+
+=========================================================================
+
+*** Authentication Flow ***
+
+**Sign Up / Sign In**  
+→ Backend creates **Access Token + Refresh Token**  
+→ Sends both tokens to frontend (often stored in cookies)  
+
+**Accessing APIs**  
+→ Frontend sends **Access Token** with requests  
+→ If valid → ✅ request succeeds  
+→ If expired → ⏳ frontend calls **Refresh API**  
+
+**Refreshing Tokens**  
+→ `POST /user/refresh-token`  
+→ Frontend sends **Refresh Token**  
+→ Backend checks validity  
+
+- If valid → returns **new Access Token** *(sometimes also new Refresh Token)*  
+  _(I prefer updating the Refresh Token as well)_  
+
+- If expired/invalid → ❌ user must log in again  
+  _(Both of them will never expire if you update the Refresh Token every time you update the Access Token)_  
+
+=========================================================================
+
+*** API Endpoints ***
+
+```http
+POST /user/sign-up          → returns Access + Refresh Tokens
+POST /user/sign-in          → returns Access + Refresh Tokens
+POST /user/refresh-token    → returns new Access Token (and maybe new Refresh Token) <------- LIKE THIS
