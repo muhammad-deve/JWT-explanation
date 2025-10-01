@@ -31,7 +31,8 @@
 ### 🔄 Refreshing Tokens
 - `POST /user/refresh-token`  
 - Frontend sends **Refresh Token**  
-- Backend checks validity  
+- Backend checks validity
+-   
 
 **Results:**  
 - ✅ If valid → returns **new Access Token** (sometimes also a new Refresh Token)  
