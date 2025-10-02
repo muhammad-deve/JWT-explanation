@@ -13,7 +13,6 @@
 - Long-lived (**days or weeks**)  
 - Used only to request new Access Tokens  
 - If expired → user must log in again  
-
 ---
 
 ## 🔐 Authentication Flow
