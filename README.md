@@ -7,8 +7,8 @@
 ### 🟢 Access Token
 - Short-lived (**15 min – 1 hour**)  
 - Used to access protected APIs  
-- Must be refreshed when expired  
-
+- Must be refreshed when expired
+- 
 ### 🔄 Refresh Token
 - Long-lived (**days or weeks**)  
 - Used only to request new Access Tokens  
@@ -31,7 +31,6 @@
 - `POST /user/refresh-token`  
 - Frontend sends **Refresh Token**  
 - Backend checks validity
--   
 
 **Results:**  
 - ✅ If valid → returns **new Access Token** (sometimes also a new Refresh Token)  
