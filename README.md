@@ -1,6 +1,6 @@
 # ✨ JWT Token (Step by Step Notes) ✨
 
-------
+----------
 ## 🔑 Token Types
 
 ### 🟢 Access Token
